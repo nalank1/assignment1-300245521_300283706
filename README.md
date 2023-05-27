@@ -1,5 +1,5 @@
-# assignment1-300245521--studentid2-
+# assignment1-300245521--300283706-
 
 Student names: Nalan Kurnaz, Pierre Georges
-Student IDs: 300245521, studentID2
+Student IDs: 300245521, 300283706
 Section: Z00
