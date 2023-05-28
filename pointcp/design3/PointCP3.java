@@ -1,5 +1,4 @@
 
-
 public class PointCP3 {
     
 }
