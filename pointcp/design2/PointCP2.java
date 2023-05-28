@@ -35,17 +35,20 @@ public class PointCP2 extends PointCP5
   /**
    * Constructs a coordinate object, with a type identifier.
    */
-  public PointCP2(char type, double xOrRho, double yOrTheta)
+  public PointCP2 (char type, double xOrRho, double yOrTheta)
   {
     if(type != 'C' && type != 'P'){
-      throw new IllegalArgumentException();;
+      throw new IllegalArgumentException();
     }else if(type == 'C'){
-        this.rho = Math.sqrt(Math.pow(xOrRho, 2) + Math.pow(yOrTheta, 2));
+      this.rho = Math.sqrt(Math.pow(xOrRho, 2) + Math.pow(yOrTheta, 2));
 
-        this.theta = Math.toDegrees(Math.atan2(yOrTheta, xOrRho));
+      this.theta = Math.toDegrees(Math.atan2(yOrTheta, xOrRho));
+    } else {
+
+      this.rho = xOrRho;
+      this.theta = yOrTheta;
+
     }
-    this.rho = xOrRho;
-    this.theta = yOrTheta;
         
   }
 	
@@ -85,7 +88,7 @@ public class PointCP2 extends PointCP5
    
     char typeCoord = 'C';	//Change coord type identifier
     return new PointCP3(typeCoord, xOrRho, yOrTheta); 
-    }
+    
   }
 
   /**
@@ -130,9 +133,10 @@ public class PointCP2 extends PointCP5
    */
   public String toString()
   {
-    return "Stored as Polar [" + getRho() + "," + getTheta() + "]") + "\n";
+    return "Stored as Polar [" + getRho() + "," + getTheta() + "]" + "\n";
   }
 
+  
   @Override
   public PointCP2 convertStorageToPolar(){
     return new PointCP2('P', this.rho, this.theta);
@@ -142,4 +146,5 @@ public class PointCP2 extends PointCP5
   public char getType(){
     return 'P';
   }
+  
 }

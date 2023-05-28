@@ -122,14 +122,14 @@
         * @return The rotated image of the original point.
         */
 
-        public PointCP rotatePoint(double rotation){
+        public PointCP3 rotatePoint(double rotation){
             double radRotation = Math.toRadians(rotation);
             double x1 = getX();
             double y1 = getY();
             double x2 = (Math.cos(radRotation) * x1) - (Math.sin(radRotation) * y1);
             double y2 = (Math.sin(radRotation) * x1) - (Math.cos(radRotation) * y1);
 
-            return new PointCP('C', x2, y2);
+            return new PointCP3('C', x2, y2);
         }
 
         /**
@@ -142,6 +142,16 @@
                 return "Stored as Cartesian ( " + getX() + "," + getY() + ")";
             } 
             return "Stored as Polar [" + getRho() + ", " + getTheta()+ "]";           
+        }
+
+        @Override
+        public PointCP2 convertStorageToPolar(){
+            return new PointCP2('P', this.rho, this.theta);
+        }
+
+        @Override
+        public char getType(){
+            return 'P';
         }
 
     }
@@ -223,7 +233,18 @@
             return "Stored as " +"Cartesian  (" + getX() + "," + getY() + ")";
         }
 
+        @Override
+        public PointCP3 convertStorageToCartesian(){
+            return new PointCP3('C', this.x , this.y);
+        }
+
+        @Override
+        public char getType(){
+            return 'C';
+        }
+
+
 
     
-}
+    }
 }
