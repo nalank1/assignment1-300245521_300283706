@@ -12,7 +12,7 @@
  * @author Dr Timothy C. Lethbridge
  * @version July 2000
  */
-public class PointCP
+public class PointCP3 extends PointCP5
 {
   //Instance variables ************************************************
 
@@ -86,7 +86,6 @@ public class PointCP
     char typeCoord = 'P';  //Change coord type identifier
 
     return new PointCP2(typeCoord, x, y);
-    }
   }
 	
 
@@ -98,7 +97,7 @@ public class PointCP
    * @param pointB The second point.
    * @return The distance between the two points.
    */
-  public double getDistance(PointCP pointB)
+  public double getDistance(PointCP5 pointB)
   {
     // Obtain differences in X and Y, sign is not important as these values
     // will be squared later.
@@ -138,7 +137,7 @@ public class PointCP
 
   @Override
   public PointCP3 convertStorageToCartesian(){
-    return new PointCP3('C', this.x + this.y)''
+    return new PointCP3('C', this.x , this.y);
   }
 
   @Override
