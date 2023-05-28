@@ -154,6 +154,12 @@
             return 'P';
         }
 
+        @Override
+        public double getDistance(PointCP5 other) {
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'getDistance'");
+        }
+
     }
 
     public class PointCP3 extends PointCP5{
@@ -235,12 +241,20 @@
 
         @Override
         public PointCP3 convertStorageToCartesian(){
-            return new PointCP3('C', this.x , this.y);
+            return new PointCP3('C', getX() , getY());
         }
 
         @Override
         public char getType(){
             return 'C';
+        }
+
+
+
+        @Override
+        public double getDistance(PointCP5 other) {
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'getDistance'");
         }
 
 

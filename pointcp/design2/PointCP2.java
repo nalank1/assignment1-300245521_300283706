@@ -37,6 +37,7 @@ public class PointCP2 extends PointCP5
    */
   public PointCP2 (char type, double xOrRho, double yOrTheta)
   {
+    super(type, xOrRho, yOrTheta);
     if(type != 'C' && type != 'P'){
       throw new IllegalArgumentException();
     }else if(type == 'C'){

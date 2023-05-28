@@ -36,6 +36,8 @@ public class PointCP3 extends PointCP5
    * Constructs a coordinate object, with a type identifier.
    */
   public PointCP3(char type, double xOrRho, double yOrTheta){
+
+    super( type,  xOrRho,  yOrTheta);
     if(type != 'C' && type != 'P'){
         throw new IllegalArgumentException();
     } else if (type == 'P'){
